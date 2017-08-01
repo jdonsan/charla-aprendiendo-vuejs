@@ -1,8 +1,8 @@
 # Guión
 
-## Slide 01: ¿Por qué esta charla?
+### Slide 01: ¿Por qué esta charla?
 
-## Slide 02: ¿Por qué yo?
+### Slide 02: ¿Por qué yo?
 
 ## Bloque 1: Introducción
 
@@ -30,7 +30,7 @@
 
 ### Slide 13: Demo 5: ¿Cómo creo diferentes vistas en mi aplicación?
 
-### Bloque 3: Desenlace
+## Bloque 3: Desenlace
 
 ### Slide 14: ¿Qué me gusta de VueJS? ¿Qué no me gusta de VueJS?
 
