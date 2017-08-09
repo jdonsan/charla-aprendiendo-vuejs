@@ -12,28 +12,24 @@
 
 ### Slide 05: ¿Qué es eso del framework reactivo?
 
-### Slide 06: ¿Qué podemos hacer con él? (I)
-
-### Slide 07: ¿Qué podemos hacer con él? (II)
-
-### Slide 08: ¿Vue? ¿Vue-Cli? ¿Vuex? ¿Vue-Router? ¿Nuxt? ¿Qué es todo esto?
+### Slide 06: ¿Qué podemos hacer con él?
 
 ## Bloque 2: Nudo
 
-### Slide 09: Demo 1: ¿Cómo empiezo? Estructura de un proyecto vue
+### Slide 07: Demo 1: ¿Cómo empiezo? Estructura de un proyecto vue
 
-### Slide 10: Demo 2: ¿Cómo se instancia VueJS?
+### Slide 08: Demo 2: ¿Cómo se instancia VueJS?
 
-### Slide 11: Demo 3: ¿Cómo creo componentes simples?
+### Slide 09: Demo 3: ¿Cómo creo componentes simples?
 
-### Slide 12: Demo 4: ¿Cómo creo componentes más complejos que se comuniquen?
+### Slide 10: Demo 4: ¿Cómo creo componentes más complejos que se comuniquen?
 
-### Slide 13: Demo 5: ¿Cómo creo diferentes vistas en mi aplicación?
+### Slide 11: Demo 5: ¿Cómo creo diferentes vistas en mi aplicación?
 
-## Bloque 3: Desenlace
+## Bloque 12: Desenlace
 
-### Slide 14: ¿Qué me gusta de VueJS? ¿Qué no me gusta de VueJS?
+### Slide 13: ¿Qué me gusta de VueJS? ¿Qué no me gusta de VueJS?
 
-### Slide 15: Me ha gustado ¿Cómo puedo continuar?
+### Slide 14: Me ha gustado ¿Cómo puedo continuar?
 
-### Slide 16: ¿Preguntas?
+### Slide 15: ¿Preguntas?
