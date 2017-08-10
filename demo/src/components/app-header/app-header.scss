@@ -1,0 +1,11 @@
+@import '../../../assets/scss/_colors';
+
+.app-header {
+    text-align: center;
+    background: $color-primary;
+    color: $color-basic;
+
+    h1 {
+        margin: 0;
+    }
+}
