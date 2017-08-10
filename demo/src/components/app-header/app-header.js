@@ -1,4 +1,4 @@
-import AppMenu from '@/components/commons/app-menu/app-menu.vue';
+import AppMenu from '@/components/app-menu/app-menu.vue';
 
 export default {
     name: 'app-header',
