@@ -1,7 +1,7 @@
 <template>
-    <ul>
-        <li>Home</li>
-        <li>Acerca de</li>
+    <ul class="app-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Acerca de</a></li>
     </ul>
 </template>
 <script src="./app-menu.js"></script>

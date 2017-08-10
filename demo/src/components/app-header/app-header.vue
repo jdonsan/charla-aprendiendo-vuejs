@@ -1,7 +1,9 @@
 <template>
     <header class="app-header">
-        <h1>Codenares Cinema Paradiso</h1>
-        <app-menu></app-menu>
+        <app-container>
+            <h1>Codenares Paradiso</h1>
+            <app-menu></app-menu>
+        </app-container>
     </header>
 </template>
 <script src="./app-header.js"></script>

@@ -1,0 +1,13 @@
+@import '../../assets/scss/_media';
+
+.app-container {
+    margin: 0 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: $screen-md-min) {
+        max-width: $screen-md-min;
+        margin: 0 auto;
+    }
+}

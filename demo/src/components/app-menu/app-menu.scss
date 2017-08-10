@@ -1,0 +1,30 @@
+@import '../../assets/scss/_media';
+@import '../../assets/scss/_colors';
+
+.app-menu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: $screen-md-min) {
+        display: block;
+        
+        li, a {
+            display: inline-block;
+        }
+
+        a {
+            color: $color-basic;
+            text-decoration: none;
+            padding: 1rem;
+
+            &:hover {
+                cursor: pointer;
+                background: $color-light;
+                color: $color-primary;
+            }
+        }
+    }
+}
+
