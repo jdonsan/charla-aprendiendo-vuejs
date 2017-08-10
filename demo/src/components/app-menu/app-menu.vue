@@ -1,7 +1,7 @@
 <template>
     <ul class="app-menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Acerca de</a></li>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/about">Acerca de</router-link></li>
     </ul>
 </template>
 <script src="./app-menu.js"></script>

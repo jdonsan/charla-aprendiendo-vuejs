@@ -1,6 +1,7 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/components/view-home'
+import Vue from 'vue';
+import Router from 'vue-router';
+import ViewHome from '@/components/view-home/view-home.vue';
+import ViewAbout from '@/components/view-about/view-about.vue';
 
 Vue.use(Router)
 
@@ -9,7 +10,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: ViewHome
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: ViewAbout
     }
   ]
 })
