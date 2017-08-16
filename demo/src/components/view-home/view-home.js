@@ -9,8 +9,12 @@ export default {
     },
     data() {
         return {
-            search: '',
-            msg: 'Welcome to Your Vue.js App'
+            queryDefault: 'Cinema Paradiso'
+        }
+    },
+    methods: {
+        searchMovie(query) {
+            alert(query);
         }
     }
 }

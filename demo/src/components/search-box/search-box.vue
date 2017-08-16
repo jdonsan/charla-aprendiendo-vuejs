@@ -1,7 +1,7 @@
 <template>
     <div class="search-box">
-        <input type="text" placeholder="Indica una película" />
-        <button>Buscar</button>
+        <input type="text" placeholder="Indica una película" v-model="query" />
+        <button @click="search">Buscar</button>
     </div>
 </template>
 <script src="./search-box.js"></script>

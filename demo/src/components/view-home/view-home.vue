@@ -1,6 +1,6 @@
 <template>
 	<app-main title="Busca tu película favorita">
-		<search-box></search-box>
+		<search-box :value="queryDefault" @search="searchMovie"></search-box>
 	</app-main>
 </template>
 
