@@ -9,7 +9,8 @@
 
     @media (min-width: $screen-md-min) {
         display: block;
-        
+        margin: -0.5rem 0;
+
         li, a {
             display: inline-block;
         }
@@ -17,7 +18,7 @@
         a {
             color: $color-basic;
             text-decoration: none;
-            padding: 1rem;
+            padding: 1.5rem 1rem;
 
             &:hover {
                 cursor: pointer;

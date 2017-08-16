@@ -1,0 +1,35 @@
+@import '../../assets/scss/_colors';
+
+$color-light-darken: darken($color-light, 15%);
+
+.search-box {
+    display: flex;
+    height: 3rem;
+
+    button, input {
+        padding: 0 2rem;
+
+         &:focus {
+            outline: none;
+        }
+    }
+
+    input {
+        width: 100%;
+        border: 1px solid $color-basic-2;
+        border-right: 1px solid $color-light;          
+    }
+
+    button {
+        background: $color-light-darken;
+        color: $color-primary;
+        border: 1px solid $color-light-darken;
+        
+        &:hover {
+            cursor: pointer;
+            background: $color-light;
+            border: 1px solid $color-light;
+            
+        }
+    }
+}
