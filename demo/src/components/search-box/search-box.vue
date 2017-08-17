@@ -1,6 +1,6 @@
 <template>
     <div class="search-box">
-        <input type="text" placeholder="Indica una película" v-model="query" />
+        <input type="text" placeholder="Ej. Cinema Paradiso" v-model="query" />
         <button @click="search">Buscar</button>
     </div>
 </template>
