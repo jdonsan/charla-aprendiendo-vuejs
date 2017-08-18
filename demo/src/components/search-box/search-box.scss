@@ -7,8 +7,6 @@ $color-light-darken: darken($color-light, 15%);
     height: 3rem;
 
     button, input {
-        padding: 0 2rem;
-
          &:focus {
             outline: none;
         }
@@ -16,13 +14,16 @@ $color-light-darken: darken($color-light, 15%);
 
     input {
         width: 100%;
+        padding: 0 0.5rem;
         border: 1px solid $color-basic-2;
         border-right: 1px solid $color-light;          
     }
 
     button {
+        padding: 0 2rem;
         background: $color-light-darken;
-        color: $color-primary;
+        color: $color-basic;
+        font-weight: bold;
         border: 1px solid $color-light-darken;
         
         &:hover {
