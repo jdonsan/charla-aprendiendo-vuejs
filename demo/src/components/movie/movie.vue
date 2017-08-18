@@ -1,20 +1,30 @@
 <template>
     <div class="movie">
         <div class="votes">
-            <span v-if="voteCount !== 0">{{ voteAverage }}</span>
-            <span v-else>--</span>
+            <span>{{ voteAverageComp }}</span>
         </div>
         <div class="title">
             <h3>{{ title }}</h3>
         </div>
-        <img v-if="posterPath" :src="'https://image.tmdb.org/t/p/w300' + posterPath" :alt="title" />
-        <img v-else src="../../assets/img/nophoto.jpg" :alt="title" />
+        <img :src="posterComp" :alt="title" />
     </div>
 </template>
 <script>
+import noPoster from '../../assets/img/nophoto.jpg';
+
 export default {
     name: 'movie',
-    props: ['title', 'posterPath', 'voteAverage', 'voteCount']
+    props: ['title', 'posterPath', 'voteAverage', 'voteCount'],
+    computed: {
+        voteAverageComp: function () {
+            return this.voteCount === 0 ? '--' : this.voteAverage;
+        },
+        posterComp: function () {
+            return !!this.posterPath
+                ? 'https://image.tmdb.org/t/p/w300' + this.posterPath
+                : noPoster;
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -30,7 +40,7 @@ $movie-height: 400px;
     background: #222;
     width: $movie-width;
     height: $movie-height;
-    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75); 
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
 
     img {
         display: block;
