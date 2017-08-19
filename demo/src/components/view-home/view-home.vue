@@ -1,7 +1,7 @@
 <template>
 	<app-main title="Busca tu película favorita">
 		<search-box @search="searchMovie" />
-		<panel v-if="movies">
+		<panel v-if="movies" :title="'Se han encontrado ' + movies.total_results + ' resultados'">
 			<movie 
 				v-for="movie in movies.results" 
 				:key="movie.id" 

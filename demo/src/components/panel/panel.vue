@@ -1,19 +1,35 @@
 <template>
     <div class="panel">
-        <slot></slot>
+        <h3>{{ title }}</h3>
+        <div class="panel-container">
+            <slot></slot>
+        </div>
     </div>
 </template>
 <script>
 export default {
-    name: 'panel'
+    name: 'panel',
+    props: ['title']
 }
 </script>
 <style lang="scss" scoped>
+@import '../../assets/scss/_colors';
+
 .panel {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    h3 {
+        font-weight: lighter;
+        margin: 1rem 0 2rem 0;
+        padding: .5rem 0;
+        border-bottom: 1px solid $color-basic-2;
+        color: $color-basic-2;
+    }
+
+    .panel-container {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 }
 </style>
 

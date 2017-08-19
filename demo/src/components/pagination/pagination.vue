@@ -1,8 +1,8 @@
 <template>
     <div class="pagination" v-if="totalPages !== 1">
-        <button @click="goToPage(-1)">Anterior</button>
+        <button v-if="page !== 1" @click="goToPage(-1)">&#60;</button>
         <label>{{ page }}</label>
-        <button @click="goToPage(1)">Posterior</button>
+        <button v-if="page !== totalPages" @click="goToPage(1)">&#62;</button>
     </div>
 </template>
 
@@ -19,11 +19,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/scss/_colors';
+
 .pagination {
     width: 100%;
     text-align: center;
     padding: 0.5rem;
     margin: 0.5rem;
+
+    button {
+        width: 3rem;
+        height: 3rem;
+        border: 0;
+        background: $color-light;
+        color: $color-basic;
+        font-weight: bold;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    label {
+        width: 3rem;
+        display: inline-block;
+    }
 }
 </style>
 

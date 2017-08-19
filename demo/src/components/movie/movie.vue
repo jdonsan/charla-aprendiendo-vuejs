@@ -1,12 +1,8 @@
 <template>
     <div class="movie">
-        <div class="votes">
-            <span>{{ voteAverageComp }}</span>
-        </div>
-        <div class="title">
-            <h3>{{ title }}</h3>
-        </div>
+        <span class="votes">{{ voteAverageComp }}</span>
         <img :src="posterComp" :alt="title" />
+        <h3 class="title">{{ title }}</h3>
     </div>
 </template>
 <script>
@@ -29,7 +25,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../../assets/scss/_colors';
-@import '../../assets/scss/_media';
 
 $movie-width: 250px;
 $movie-height: 400px;
@@ -41,6 +36,13 @@ $movie-height: 400px;
     width: $movie-width;
     height: $movie-height;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.2s;
+
+    &:hover {
+        box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.75);
+        margin-top: 0.2rem;
+        cursor: pointer;
+    }
 
     img {
         display: block;
@@ -79,11 +81,8 @@ $movie-height: 400px;
         padding: 0.5rem;
         box-sizing: border-box;
         opacity: 0.8;
-
-        h3 {
-            text-align: center;
-            font-size: 0.9rem;
-        }
+        text-align: center;
+        font-size: 0.9rem;
     }
 }
 </style>
