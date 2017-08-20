@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import AppContainer from '@/components/container.vue';
-import AppMenu from '@/components/menu.vue';
+import AppContainer from '@/components/container';
+import AppMenu from '@/components/menu';
 
 export default {
     name: 'navbar',

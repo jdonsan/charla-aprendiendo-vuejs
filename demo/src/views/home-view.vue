@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import SearchBox from '@/components/search-box.vue';
-import Panel from '@/components/panel.vue';
-import Error from '@/components/error.vue';
-import Subpanel from '@/components/subpanel.vue';
-import Pagination from '@/components/pagination.vue';
-import Movie from '@/components/movie.vue';
+import SearchBox from '@/components/search-box';
+import Panel from '@/components/panel';
+import Error from '@/components/error';
+import Subpanel from '@/components/subpanel';
+import Pagination from '@/components/pagination';
+import Movie from '@/components/movie';
 import axios from 'axios';
 
 const components = {
