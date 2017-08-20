@@ -5,8 +5,9 @@
         <h3 class="title">{{ title }}</h3>
     </div>
 </template>
+
 <script>
-import noPoster from '../../assets/img/nophoto.jpg';
+import noPoster from '../assets/img/nophoto.jpg';
 
 export default {
     name: 'movie',
@@ -23,8 +24,9 @@ export default {
     }
 }
 </script>
+
 <style lang="scss" scoped>
-@import '../../assets/scss/_colors';
+@import '../assets/scss/_colors';
 
 $movie-width: 250px;
 $movie-height: 400px;
@@ -68,7 +70,7 @@ $movie-height: 400px;
     .title {
         position: absolute;
         display: flex;
-        background: $color-primary; // rgba(34, 34, 34, 0.7);
+        background: $color-primary;
         align-items: center;
         justify-content: center;
         height: 3rem;

@@ -1,21 +1,23 @@
 <template>
-    <div class="panel">
+    <div class="subpanel">
         <h3>{{ title }}</h3>
-        <div class="panel-container">
+        <div class="subpanel-container">
             <slot></slot>
         </div>
     </div>
 </template>
+
 <script>
 export default {
     name: 'panel',
     props: ['title']
 }
 </script>
-<style lang="scss" scoped>
-@import '../../assets/scss/_colors';
 
-.panel {
+<style lang="scss" scoped>
+@import '../assets/scss/_colors';
+
+.subpanel {
     h3 {
         font-weight: lighter;
         margin: 1rem 0 2rem 0;
@@ -24,7 +26,7 @@ export default {
         color: $color-basic-2;
     }
 
-    .panel-container {
+    .subpanel-container {
         margin-top: 1rem;
         display: flex;
         justify-content: space-around;

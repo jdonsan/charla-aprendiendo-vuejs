@@ -1,7 +1,25 @@
-@import '../../assets/scss/_media';
-@import '../../assets/scss/_colors';
+<template>
+    <ul class="menu">
+        <li>
+            <router-link to="/">Home</router-link>
+        </li>
+        <li>
+            <router-link to="/about">Acerca de</router-link>
+        </li>
+    </ul>
+</template>
 
-.app-menu {
+<script>
+export default {
+    name: 'menu'
+};
+</script>
+
+<style lang="scss" scoped>
+@import '../assets/scss/_media';
+@import '../assets/scss/_colors';
+
+.menu {
     display: none;
     list-style: none;
     margin: 0;
@@ -11,7 +29,8 @@
         display: block;
         margin: -0.5rem 0;
 
-        li, a {
+        li,
+        a {
             display: inline-block;
         }
 
@@ -28,4 +47,5 @@
         }
     }
 }
+</style>
 

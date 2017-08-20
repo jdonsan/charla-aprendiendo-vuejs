@@ -1,16 +1,39 @@
-import SearchBox from '@/components/search-box/search-box.vue';
-import AppMain from '@/components/app-main/app-main.vue';
-import PanelError from '@/components/panel-error/panel-error.vue';
-import Panel from '@/components/panel/panel.vue';
-import Pagination from '@/components/pagination/pagination.vue';
-import Movie from '@/components/movie/movie.vue';
+<template>
+	<panel title="Busca tu película favorita">
+		<search-box @search="searchMovie" />
+		<subpanel v-if="movies" :title="'Se han encontrado ' + movies.total_results + ' resultados'">
+			<movie 
+				v-for="movie in movies.results" 
+				:key="movie.id" 
+				:title="movie.title" 
+				:posterPath="movie.poster_path" 
+				:voteAverage="movie.vote_average"
+				:voteCount="movie.vote_count"
+			 />
+			<pagination 
+				:page="movies.page" 
+				:totalPages="movies.total_pages"
+				@page="searchMovieByPage" 
+			/>
+		</subpanel>
+		<error v-else-if="error" :message="error.message" />
+	</panel>
+</template>
+
+<script>
+import SearchBox from '@/components/search-box.vue';
+import Panel from '@/components/panel.vue';
+import Error from '@/components/error.vue';
+import Subpanel from '@/components/subpanel.vue';
+import Pagination from '@/components/pagination.vue';
+import Movie from '@/components/movie.vue';
 import axios from 'axios';
 
 const components = {
-    AppMain,
     SearchBox,
-    PanelError,
     Panel,
+    Error,
+    Subpanel,
     Pagination,
     Movie
 };
@@ -53,8 +76,9 @@ const methods = {
 }
 
 export default {
-    name: 'view-home',
+    name: 'home-view',
     components,
     data,
     methods
 }
+</script>

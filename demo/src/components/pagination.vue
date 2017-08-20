@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/scss/_colors';
+@import '../assets/scss/_colors';
 
 .pagination {
     width: 100%;
