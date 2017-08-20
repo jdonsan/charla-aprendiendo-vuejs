@@ -12,7 +12,7 @@
 		<p>
 			<a href="https://github.com/jdonsan/charla-aprendiendo-vuejs" target="_blank">
 				La demo forma para de la charla 
-				<b>Aprendiendo VueJS: Un ejemplo práctico de cómo usarlo</b> 
+				<b>Aprendiendo VueJS: Un ejemplo práctico de cómo usarlo</b>
 				que puedes ver en este repositorio
 			</a>
 		</p>
@@ -38,7 +38,6 @@ img {
 
 p {
 	font-size: 1.1rem;
-	font-weight: lighter;
 	word-spacing: 0.1rem;
 }
 
