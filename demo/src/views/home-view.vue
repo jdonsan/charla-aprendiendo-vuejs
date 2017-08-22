@@ -4,7 +4,8 @@
 		<subpanel v-if="movies" :title="'Se han encontrado ' + movies.total_results + ' resultados'">
 			<movie 
 				v-for="movie in movies.results" 
-				:key="movie.id" 
+				:key="movie.id"
+                :id="movie.id" 
 				:title="movie.title" 
 				:posterPath="movie.poster_path" 
 				:voteAverage="movie.vote_average"

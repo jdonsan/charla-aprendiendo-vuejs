@@ -1,9 +1,9 @@
 <template>
-    <div class="movie">
+    <router-link class="movie" :to="{ name: 'movie-detail', params: { movieId: id }}">
         <span class="votes">{{ voteAverageComp }}</span>
         <img :src="posterComp" :alt="title" />
         <h3 class="title">{{ title }}</h3>
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ import noPoster from '../assets/img/nophoto.jpg';
 
 export default {
     name: 'movie',
-    props: ['title', 'posterPath', 'voteAverage', 'voteCount'],
+    props: ['title', 'posterPath', 'voteAverage', 'voteCount', 'id'],
     computed: {
         voteAverageComp: function () {
             return this.voteCount === 0 ? '--' : this.voteAverage;
