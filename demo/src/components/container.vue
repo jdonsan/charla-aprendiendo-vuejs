@@ -21,7 +21,7 @@ export default {
 	padding: 0.5rem 0;
 
 	@media (min-width: $screen-md-min) {
-		max-width: $screen-md-min;
+		max-width: 992px;
 		margin: 0 auto;
 	}
 }
