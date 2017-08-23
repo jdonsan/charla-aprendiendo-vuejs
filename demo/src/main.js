@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import App from './layouts/app.vue';
-import Vue2Filters from 'vue2-filters'
 import router from './router';
+import filters from './plugins/filters';
 
-Vue.use(Vue2Filters);
+Vue.use(filters);
 Vue.config.productionTip = false;
 
 new Vue({
