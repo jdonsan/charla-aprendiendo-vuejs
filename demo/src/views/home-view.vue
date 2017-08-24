@@ -28,7 +28,7 @@ import Error from '@/components/error';
 import Subpanel from '@/components/subpanel';
 import Pagination from '@/components/pagination';
 import Movie from '@/components/movie';
-import axios from 'axios';
+import api from '@/api';
 
 const components = {
     SearchBox,
@@ -47,23 +47,12 @@ const data = function () {
     }
 }
 
-const methods = {
-    createURL(query, page) {
-        return [
-            'https://api.themoviedb.org/3/search/movie?',
-            'api_key=c0604ef7ca06da2a0c0f7796b107eab3',
-            '&language=es-ES',
-            '&query=' + query,
-            '&page=' + page,
-            '&include_adult=false'
-        ].join('');
-    },
-    searchMovie(query, page = 1) {
+const methods = {    
+    searchMovie(query, page) {
         this.resetData();
         this.query = query;
 
-        axios.get(this.createURL(query, page))
-            .then(response => response.data)
+        api.getMovies(query, page)
             .then(movies => this.movies = movies)
             .catch(error => this.error = error);
     },

@@ -28,7 +28,7 @@
 import Panel from '@/components/panel';
 import Subpanel from '@/components/subpanel';
 import Badge from '@/components/badge';
-import axios from 'axios';
+import api from '@/api';
 import noPoster from '../assets/img/nophoto.jpg';
 
 export default {
@@ -56,10 +56,7 @@ export default {
     },
     methods: {
         fetchData() {
-            const url = `https://api.themoviedb.org/3/movie/${this.movieId}?api_key=c0604ef7ca06da2a0c0f7796b107eab3&language=es-ES`;
-            axios.get(url)
-                .then(response => response.data)
-                .then(movie => this.movie = movie);
+            api.getMovieById(this.movieId).then(movie => this.movie = movie);
         }
     }
 }
@@ -93,7 +90,7 @@ export default {
 
     li {
         display: inline-block;
-        margin-right: 0.5rem;
+        margin: 0 0.5rem 0.5rem 0;
         padding: 0.5rem 1rem;
         background: $color-light;
         color: $color-basic;
