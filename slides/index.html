@@ -73,7 +73,7 @@
 
 <body>
 	<main role="main">
-		<article id="webslides">
+		<article class="bg-white" id="webslides">
 
 			<!-- Slide: Portada -->
 			<section class="bg-black-blue aligncenter">
@@ -226,7 +226,17 @@
 			<section>
 				<div class="wrap aligncenter">
 					<h2>Nuestra Webapp empieza por <strong class="bg-light">MAIN.JS</strong></h2>
-					<img class="size-50" src="static/images/files-vue.png" alt="Ficheros proyecto de Vue">
+					<br>
+					<pre>
+					import Vue from 'vue';
+					import App from './layouts/app.vue';
+					
+					new Vue({
+						el: '#app',
+						template: '<app/>',
+						components: { App }
+					});	
+					</pre>
 				</div>
 			</section>
 
@@ -257,16 +267,78 @@
 			<!-- Slide: Templates y directivas -->
 			<section>
 				<div class="wrap aligncenter">
-					<h2><strong class="bg-light">Templates</strong> y directivas</h2>
-					<img class="size-50" src="static/images/files-vue.png" alt="Ficheros proyecto de Vue">
+					<h2><strong class="bg-light">Elementos</strong> de un template</h2>
+					<ul class="flexblock features">
+						<li>
+							<div>
+								<span>{{ }}</span>
+								<h2>La interpolación</h2>
+								Datos planos que tiene una instancia de un componente
+							</div>
+						</li>
+						<li>
+							<div>
+								<span>V-</span>
+								<h2>Las directivas</h2>
+								Datos planos que tiene una instancia de un componente
+							</div>
+						</li>
+						<li>
+							<div>
+								<span>|</span>
+								<h2>Los filtros</h2>
+								Reacccionan ante cambios
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<div class="wrap aligncenter">
+					<h2><strong class="bg-light">Ejemplo</strong></h2>
+					<p><code>Pintar películas si existen resultados</code></p>
+					<pre>
+&lt;template&gt;
+	&lt;subpanel v-if="movies" :title="'Se han encontrado ' + movies.total_results + ' resultados'"&gt;
+		&lt;movie 
+			v-for="movie in movies.results" 
+			:key="movie.id"
+			:id="movie.id" 
+			:title="movie.title" 
+			:posterPath="movie.poster_path" 
+			:voteAverage="movie.vote_average"
+			:voteCount="movie.vote_count"
+		/&gt;
+		&lt;pagination 
+			:page="movies.page" 
+			:totalPages="movies.total_pages"
+			@page="searchMovieByPage" 
+		/&gt;
+	&lt;/subpanel&gt;
+&lt;/template&gt;
+					</pre>
 				</div>
 			</section>
 
 			<!-- Slide: Estado y métodos -->
 			<section>
-				<div class="wrap aligncenter">
-					<h2><strong class="bg-light">Estado</strong> y métodos</h2>
-					<img class="size-50" src="static/images/files-vue.png" alt="Ficheros proyecto de Vue">
+				<div class="wrap">
+					<h2><strong class="bg-light">Elementos</strong> de la instancia del componente</h2>
+
+					<ul class="flexblock features">
+						<li>
+							<div>
+								<h2>Los datos</h2>
+								Datos planos que tiene una instancia de un componente
+							</div>
+						</li>
+						<li>
+							<div>
+								<h2>Los métodos</h2>
+								Reacccionan ante cambios
+							</div>
+						</li>
+					</ul>
 				</div>
 			</section>
 
@@ -290,7 +362,7 @@
 			<section>
 				<div class="wrap aligncenter">
 					<h2><strong class="bg-light">Comunicación</strong> entre componentes</h2>
-					<img class="size-50" src="static/images/files-vue.png" alt="Ficheros proyecto de Vue">
+					<img class="size-50" src="static/images/comunication.png" alt="Comunicacion en componentes de vue">
 				</div>
 			</section>
 
@@ -310,6 +382,13 @@
 				</div>
 			</section>
 
+			<section>
+				<div class="wrap aligncenter">
+					<h2><strong class="bg-light">Propiedades</strong> y <strong class="bg-light">Estados</strong></h2>
+					<img class="size-50" src="static/images/flow-vue.png" alt="Comunicacion en componentes de vue">
+				</div>
+			</section>
+
 			<!-- Slide: Bloque 3 -->
 			<section class="bg-primary">
 				<span class="background dark" style="background-image:url('static/images/bg/bloc.jpg')"></span>
@@ -326,19 +405,19 @@
 					<ul class="flexblock steps">
 						<li>
 							<h2>01. No Web Components</h2>
-							<p>When you're really passionate about your job, you can change the world.</p>
+							<p>El concepto de componente no sigue el estandar. No hay Shadow DOM</p>
 						</li>
 						<li>
 							<div class="process step-2"></div>
 
 							<h2>02. Todavía bastante configuración</h2>
-							<p>Why does this business exist? How are you different? Why matters?</p>
+							<p>En aplicaciones grandes se sigue necesitando mucha fontanería para que funcionen</p>
 						</li>
 						<li>
 							<div class="process step-3"></div>
 
-							<h2>03. Testing y mutaciones</h2>
-							<p>Leadership through usefulness, openness, empathy, and good taste.</p>
+							<h2>03. Testing</h2>
+							<p>Herramientas de testing aún por madurar</p>
 						</li>
 					</ul>
 				</div>
@@ -351,19 +430,19 @@
 					<ul class="flexblock steps">
 						<li>
 							<h2>01. API intuitiva</h2>
-							<p>When you're really passionate about your job, you can change the world.</p>
+							<p>Fácil de aprender, poco intrusiva, centrada en objetos planos</p>
 						</li>
 						<li>
 							<div class="process step-2"></div>
 
 							<h2>02. Sin dependencias de terceros</h2>
-							<p>Why does this business exist? How are you different? Why matters?</p>
+							<p>Con incluir la librería de Vue, puedo empezar a crear componentes</p>
 						</li>
 						<li>
 							<div class="process step-3"></div>
 
 							<h2>03. Comunidad muy activa</h2>
-							<p>Leadership through usefulness, openness, empathy, and good taste.</p>
+							<p>Entorno maduro, con un abánico amplio de herramientas y librerías oficiales y no oficiales</p>
 						</li>
 					</ul>
 				</div>
