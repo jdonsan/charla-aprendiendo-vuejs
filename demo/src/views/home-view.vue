@@ -2,7 +2,7 @@
 	<panel title="Busca tu película favorita">
 		<search-box @search="searchMovie" />
 		<subpanel v-if="movies" :title="'Se han encontrado ' + movies.total_results + ' resultados'">
-			<movie 
+            <movie 
 				v-for="movie in movies.results" 
 				:key="movie.id"
                 :id="movie.id" 

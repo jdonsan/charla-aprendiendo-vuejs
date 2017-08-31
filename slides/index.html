@@ -206,10 +206,31 @@
 				</div>
 			</section>
 
+			<section>
+				<div class="wrap">
+					<h2><strong class="bg-light">Herramientas necesarias</strong> para una SPA media</h2>
+
+					<ul class="flexblock features">
+						<li>
+							<div>
+								<h2>Instalar NODE JS</h2>
+								<code>https://nodejs.org/es/</code>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h2>Instalar vue-cli</h2>
+								<code>$ npm install vue-cli -g</code>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
 			<!-- Slides: Cómo empiezo -->
 			<section class="fullscreen">
 				<div class="embed">
-					<video autoplay loop>
+					<video autoplay loop controls>
 						<source src="static/videos/como-empezar-vue.mp4" type="video/mp4">
 					</video>
 				</div>
@@ -255,10 +276,18 @@
 				</div>
 			</section>
 
+			<section class="fullscreen">
+				<div class="embed">
+					<video autoplay loop controls>
+						<source src="static/videos/vue-debug.mp4" type="video/mp4">
+					</video>
+				</div>
+			</section>
+
 			<!-- Slide: Estructura de un componente -->
 			<section class="fullscreen">
 				<div class="embed">
-					<video autoplay loop>
+					<video autoplay loop controls>
 						<source src="static/videos/fichero-vue.mp4" type="video/mp4">
 					</video>
 				</div>
@@ -273,33 +302,36 @@
 							<div>
 								<span>{{ }}</span>
 								<h2>La interpolación</h2>
-								Datos planos que tiene una instancia de un componente
+								Permiten pintar datos de nuestro modelo por pantalla mediante un marcado de llaves.
 							</div>
 						</li>
 						<li>
 							<div>
 								<span>V-</span>
 								<h2>Las directivas</h2>
-								Datos planos que tiene una instancia de un componente
+								Son atributos HTML personalizados que aumentan el comportamiento de las etíquetas estándar o de los componentes. Los oficiales
+								de Vue empiezan por v-
 							</div>
 						</li>
 						<li>
 							<div>
 								<span>|</span>
 								<h2>Los filtros</h2>
-								Reacccionan ante cambios
+								Son transformaciones visuales sobre datos del modelo. Convertir 2000 en 2.000,00€ por ejemplo.
 							</div>
 						</li>
 					</ul>
 				</div>
 			</section>
+
 			<section>
 				<div class="wrap aligncenter">
 					<h2><strong class="bg-light">Ejemplo</strong></h2>
 					<p><code>Pintar películas si existen resultados</code></p>
 					<pre>
 &lt;template&gt;
-	&lt;subpanel v-if="movies" :title="'Se han encontrado ' + movies.total_results + ' resultados'"&gt;
+	&lt;subpanel v-if="movies"&gt;
+		&lt;h2&gt;Se han encontrado {{ movies.total_results | normalize }} resultados&lt;/h2&gt;
 		&lt;movie 
 			v-for="movie in movies.results" 
 			:key="movie.id"
@@ -329,13 +361,13 @@
 						<li>
 							<div>
 								<h2>Los datos</h2>
-								Datos planos que tiene una instancia de un componente
+								Estado interno de un componente. Son reactivos y mutables. Para nosotros son un objeto plano. Ayudan como esquema interno.
 							</div>
 						</li>
 						<li>
 							<div>
 								<h2>Los métodos</h2>
-								Reacccionan ante cambios
+								Son funciones que manejan los eventos disparados por el usuario.
 							</div>
 						</li>
 					</ul>
@@ -344,7 +376,7 @@
 
 			<section class="fullscreen">
 				<div class="embed">
-					<video autoplay loop>
+					<video autoplay loop controls>
 						<source src="static/videos/estado-vue.mp4" type="video/mp4">
 					</video>
 				</div>
@@ -352,7 +384,7 @@
 
 			<section class="fullscreen">
 				<div class="embed">
-					<video autoplay loop>
+					<video autoplay loop controls>
 						<source src="static/videos/event-vue.mp4" type="video/mp4">
 					</video>
 				</div>
@@ -368,7 +400,7 @@
 
 			<section class="fullscreen">
 				<div class="embed">
-					<video autoplay loop>
+					<video autoplay loop controls>
 						<source src="static/videos/props-vue.mp4" type="video/mp4">
 					</video>
 				</div>
@@ -376,7 +408,7 @@
 
 			<section class="fullscreen">
 				<div class="embed">
-					<video autoplay loop>
+					<video autoplay loop controls>
 						<source src="static/videos/comunication-vue.mp4" type="video/mp4">
 					</video>
 				</div>
