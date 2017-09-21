@@ -189,11 +189,28 @@
 				</div>
 			</section>
 
-			<!-- Slide: ¿Reactivo? -->
+			<!-- Slide: Y qué más? -->
 			<section class="bg-white">
-				<div class="wrap aligncenter">
-					<h2>Reacciona a <strong class="bg-light">cambios de estado</strong> para <strong class="bg-light">repintar vistas</strong></h2>
-					<img class="size-70" src="static/images/mvvm.png" alt="Motor de render">
+				<div class="wrap">
+					<h2>¿ Y qué <strong class="bg-light">más</strong>?</h2>
+					<ul class="flexblock steps">
+						<li>
+							<h2>01. Sin manipular DOM</h2>
+							<p>Componentes data driven. Tú te encargas de definir el módelo y donde debe pintar y Vue se encarga del resto</p>
+						</li>
+						<li>
+							<div class="process step-2"></div>
+
+							<h2>02. Renderiza rápido gracias al Virtual DOM</h2>
+							<p>Mantiene una copia en caché del DOM y decide cuáles los cambios mínimos sobre el DOM real</p>
+						</li>
+						<li>
+							<div class="process step-3"></div>
+
+							<h2>03. Sin dependencias, escribe HTML, CSS y JS</h2>
+							<p>No es nada intrusivo en el flujo de trabajo convencional de cualquier front</p>
+						</li>
+					</ul>
 				</div>
 			</section>
 
@@ -203,6 +220,14 @@
 				<div class="wrap size-60">
 					<p class="text-context">BLOQUE II</p>
 					<h2><strong class="bg-light">PRACTIQUEMOS UN POCO</strong></h2>
+				</div>
+			</section>
+
+			<section class="fullscreen">
+				<div class="embed">
+					<video autoplay loop controls>
+						<source src="static/videos/vue-debug.mp4" type="video/mp4">
+					</video>
 				</div>
 			</section>
 
@@ -254,7 +279,7 @@
 					
 					new Vue({
 						el: '#app',
-						template: '<app/>',
+						template: '&lt;app/&gt;',
 						components: { App }
 					});	
 					</pre>
@@ -264,23 +289,13 @@
 			<!-- Slide: Estructura de mi aplicación -->
 			<section>
 				<div class="wrap aligncenter">
-					<h2>Explosión de <strong class="bg-light">componentes</strong></h2>
-					<img class="size-50" src="static/images/files-vue.png" alt="Ficheros proyecto de Vue">
+					<img class="size-70" src="static/images/arbol-componentes.png" alt="Estructura de aplicación">
 				</div>
 			</section>
 
 			<section>
 				<div class="wrap aligncenter">
-					<h2>Explosión de <strong class="bg-light">componentes</strong></h2>
-					<img class="size-50" src="static/images/files-vue.png" alt="Ficheros proyecto de Vue">
-				</div>
-			</section>
-
-			<section class="fullscreen">
-				<div class="embed">
-					<video autoplay loop controls>
-						<source src="static/videos/vue-debug.mp4" type="video/mp4">
-					</video>
+					<img class="size-70" src="static/images/search-box-componente.png" alt="Ficheros proyecto de Vue">
 				</div>
 			</section>
 
@@ -421,6 +436,12 @@
 				</div>
 			</section>
 
+			<section>
+				<div class="wrap aligncenter">
+					<img class="size-70" src="static/images/vistas-componentes.png" alt="Ficheros proyecto de Vue">
+				</div>
+			</section>
+
 			<!-- Slide: Bloque 3 -->
 			<section class="bg-primary">
 				<span class="background dark" style="background-image:url('static/images/bg/bloc.jpg')"></span>
@@ -448,8 +469,8 @@
 						<li>
 							<div class="process step-3"></div>
 
-							<h2>03. Testing</h2>
-							<p>Herramientas de testing aún por madurar</p>
+							<h2>03. La reactividad de objetos y arrays</h2>
+							<p>La API es bastante fea y puede traer malentendidos al principio. La mejorarán en Vue 3</p>
 						</li>
 					</ul>
 				</div>
@@ -475,6 +496,12 @@
 
 							<h2>03. Comunidad muy activa</h2>
 							<p>Entorno maduro, con un abánico amplio de herramientas y librerías oficiales y no oficiales</p>
+						</li>
+						<li>
+							<div class="process step-4"></div>
+
+							<h2>04. Documentación Excelente</h2>
+							<p>No necesitas muchos más recursos para aprender. La actualizan al día y es muy usable y completa</p>
 						</li>
 					</ul>
 				</div>
