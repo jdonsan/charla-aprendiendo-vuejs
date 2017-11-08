@@ -257,7 +257,8 @@
 			<section>
 				<div class="wrap content-center">
 					<h1>Instalamos</h1>
-					<br><br>
+					<br>
+					<br>
 					<h2>
 						<strong class="bg-light">1</strong>
 					</h2>
@@ -265,7 +266,10 @@
 						NodeJS
 						<code>https://nodejs.org</code>
 					</h3>
-					<br><br><br><br>
+					<br>
+					<br>
+					<br>
+					<br>
 					<h2>
 						<strong class="bg-light">2</strong>
 					</h2>
@@ -483,6 +487,72 @@
 						<strong class="bg-light">Estados</strong>
 					</h2>
 					<img class="size-50" src="static/images/flow-vue.png" alt="Comunicacion en componentes de vue">
+				</div>
+			</section>
+
+			<section>
+				<div class="wrap content-center">
+					<h1>Elementos de un componente</h1>
+					<h2>
+						<strong class="bg-light">SLOT</strong>
+					</h2>
+					<h3 class="text-intro">
+						Permite crear componentes cuya etiqueta HTML es de tipo bloque
+					</h3>
+				</div>
+			</section>
+
+			<section>
+				<div class="wrap">
+					<div class="grid">
+						<div class="column">
+							<h2>
+								<strong class="bg-light">Esto</strong>...</h2>
+							<br>
+							<pre>
+&lt;-- component children --&gt;
+&lt;template&gt;
+   &lt;div&gt;
+      &lt;h2&gt;{{ title }}&lt;/h2&gt;
+      &lt;slot&gt;&lt;/slot&gt;
+   &lt;/div&gt;
+&lt;/template&gt;
+	
+	
+&lt;-- component parent --&gt;
+&lt;template&gt;
+   &lt;children title="Hola amigos y amigas"&gt;
+      &lt;h3&gt;Esto es HTML5Spain&lt;/h3&gt;
+   &lt;/children&gt;
+&lt;/template&gt;
+								</pre>
+						</div>
+						<div class="column">
+							<h2>... recuerda a
+								<strong class="bg-light">esto</strong>
+							</h2>
+							<br>
+							<pre>
+// función
+function showPanel(title, callback) {
+   console.log(title);
+   callback();
+}
+	
+	
+	
+	
+// ejecución de función
+showPanel(
+   'Hola amigas y amigos', 
+   () => console.log('Esto es HTML5Spain')
+);
+
+	
+	
+								</pre>
+						</div>
+					</div>
 				</div>
 			</section>
 
