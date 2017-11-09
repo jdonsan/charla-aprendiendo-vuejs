@@ -2,6 +2,7 @@
     <form class="search-box" @submit.prevent="search">
         <input type="text" placeholder="Ej. Cinema Paradiso" v-model="query" />
         <button>Buscar</button>
+        <span>{{ queryLength }}</span>
     </form>
 </template>
 
@@ -14,6 +15,11 @@ export default {
     data() {
         return {
             query: this.value
+        }
+    },
+    computed: {
+        queryLength: function () {
+            return this.query.length;
         }
     },
     methods: {
@@ -32,6 +38,7 @@ $color-light-darken: darken($color-light, 15%);
 .search-box {
     display: flex;
     height: 3rem;
+    
 
     button,
     input {
@@ -59,6 +66,12 @@ $color-light-darken: darken($color-light, 15%);
             background: $color-light;
             border: 1px solid $color-light;
         }
+    }
+
+    span {
+        display: block;
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
     }
 }
 </style>
