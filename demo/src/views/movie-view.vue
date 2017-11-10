@@ -1,23 +1,23 @@
 <template>
     <panel title="Detalle de la película">
-        <subpanel v-if="movie" :title="movie.title">
+        <subpanel v-if="title" :title="title">
             <div class="movie-poster">
-                <img :src="posterComp" :alt="movie.title">
+                <img :src="posterComp" :alt="title">
             </div>
             <div class="movie-detail">
                 <ul class="movie-genres">
-                    <li :key="genre.id" v-for="genre in movie.genres">{{ genre.name }}</li>
+                    <li :key="genre.id" v-for="genre in genres">{{ genre.name }}</li>
                 </ul>
 
                 <h4>Sinopsis</h4>
-                <p>{{ movie.overview }}</p>
+                <p>{{ overview }}</p>
 
                 <h4>Presupuesto</h4>
-                <p>{{ movie.budget | currency }}</p>
+                <p>{{ budget | currency }}</p>
 
                 <div class="votes">
-                    <badge label="Votos" :data="movie.vote_count" />
-                    <badge label="Nota" :data="movie.vote_average" />
+                    <badge label="Votos" :data="voteCount" />
+                    <badge label="Nota" :data="voteAverage" />
                 </div>
             </div>
         </subpanel>
@@ -29,10 +29,11 @@ import Panel from '@/components/panel';
 import Subpanel from '@/components/subpanel';
 import Badge from '@/components/badge';
 import api from '@/api';
-import noPoster from '../assets/img/nophoto.jpg';
+import posterMixin from '@/mixins/poster';
 
 export default {
     name: 'detail-view',
+    mixins: [posterMixin],
     components: {
         Panel,
         Subpanel,
@@ -41,66 +42,73 @@ export default {
     props: ['movieId'],
     data() {
         return {
-            movie: null
+            title: '',
+            overview: '',
+            posterPath: '',
+            voteAverage: '',
+            voteCount: '',
+            budget: 0
         }
     },
     created() {
         this.fetchData();
     },
-    computed: {
-        posterComp: function () {
-            return !!this.movie.poster_path
-                ? 'https://image.tmdb.org/t/p/w300' + this.movie.poster_path
-                : noPoster;
-        }
-    },
     methods: {
         fetchData() {
-            api.getMovieById(this.movieId).then(movie => this.movie = movie);
+            api.getMovieById(this.movieId).then(this.setData);
+        },
+        setData(movie) {
+            this.title = movie.title;
+            this.overview = movie.overview;
+            this.posterPath = movie.poster_path;
+            this.voteAverage = movie.vote_average;
+            this.voteCount = movie.vote_count;
+            this.budget = movie.budget;
+            this.genres = movie.genres;
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/_media';
-@import '../assets/scss/_colors';
+@import "../assets/scss/_media";
+@import "../assets/scss/_colors";
 
 .movie-poster {
-    margin-bottom: 1rem;
-    text-align: left;
-    width: 100%;
+  margin-bottom: 1rem;
+  text-align: left;
+  width: 100%;
 
-    @media (min-width: $screen-md-min) {
-        width: 40%
-    }
+  @media (min-width: $screen-md-min) {
+    width: 40%;
+  }
 }
 
 .movie-detail {
-    @media (min-width: $screen-md-min) {
-        width: 60%;
-    }
+  @media (min-width: $screen-md-min) {
+    width: 60%;
+  }
 }
 
 .movie-genres {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 
-    li {
-        display: inline-block;
-        margin: 0 0.5rem 0.5rem 0;
-        padding: 0.5rem 1rem;
-        background: $color-light;
-        color: $color-basic;
-        font-weight: bold;
-    }
+  li {
+    display: inline-block;
+    margin: 0 0.5rem 0.5rem 0;
+    padding: 0.5rem 1rem;
+    background: $color-light;
+    color: $color-basic;
+    font-weight: bold;
+  }
 }
 
 .votes {
-    display: flex;
-    padding: 0.5rem 0;
+  display: flex;
+  padding: 0.5rem 0;
 }
 </style>
 

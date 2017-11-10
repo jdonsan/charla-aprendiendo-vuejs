@@ -7,19 +7,15 @@
 </template>
 
 <script>
-import noPoster from '../assets/img/nophoto.jpg';
+import posterMixin from '@/mixins/poster';
 
 export default {
     name: 'movie',
+    mixins: [posterMixin],
     props: ['title', 'posterPath', 'voteAverage', 'voteCount', 'id'],
     computed: {
         voteAverageComp: function () {
             return this.voteCount === 0 ? '--' : this.voteAverage;
-        },
-        posterComp: function () {
-            return !!this.posterPath
-                ? 'https://image.tmdb.org/t/p/w300' + this.posterPath
-                : noPoster;
         }
     }
 }

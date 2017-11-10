@@ -1,6 +1,6 @@
 <template>
-	<panel title="Busca tu película favorita">
-		<search-box @search="searchMovie" />
+    <panel title="Busca tu película favorita">
+        <search-box @search="searchMovie" />
 		<subpanel v-if="movies" :title="'Se han encontrado ' + movies.total_results + ' resultados'">
             <movie 
 				v-for="movie in movies.results" 
@@ -18,12 +18,12 @@
 			/>
 		</subpanel>
 		<error v-else-if="error" :message="error.message" />
-	</panel>
+    </panel>
 </template>
 
 <script>
-import SearchBox from '@/components/search-box';
 import Panel from '@/components/panel';
+import SearchBox from '@/components/search-box';
 import Error from '@/components/error';
 import Subpanel from '@/components/subpanel';
 import Pagination from '@/components/pagination';
@@ -31,8 +31,8 @@ import Movie from '@/components/movie';
 import api from '@/api';
 
 const components = {
-    SearchBox,
     Panel,
+    SearchBox,
     Error,
     Subpanel,
     Pagination,
@@ -47,7 +47,7 @@ const data = function () {
     }
 }
 
-const methods = {    
+const methods = {
     searchMovie(query, page) {
         this.resetData();
         this.query = query;
